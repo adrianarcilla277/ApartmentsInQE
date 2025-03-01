@@ -1,0 +1,670 @@
+/* Basic Styling */
+body {
+    background: #f5f5f5;
+    background-repeat: repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: linear-gradient(to right, #000000, #6092bF );
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+}
+h1 {
+    margin-left: 25px;
+    color: white;
+}
+/* Logo */
+.logo-container img {
+    height: 50px;
+    width: auto;
+}
+
+/* Search Bar Container */
+.search-container {
+    position: relative;
+    width: 300px;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    outline: none;
+}
+
+.search-container button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border: none;
+    background: #6092bF;
+    color: rgb(0, 0, 0);
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-container ul {
+    list-style: none;
+    background: rgb(0, 0, 0);
+    width: 100%;
+    border: 1px solid #ddd;
+    border-top: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    max-height: 150px;
+    overflow-y: auto;
+    display: none;
+}
+
+.search-container ul li {
+    color: rgb(0, 0, 0); /* Gagawing puti ang text */
+    background: rgb(255, 255, 255); /* Para lumitaw ang puting text */
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-container ul li:hover {
+    background: #6092bF;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .search-container {
+        width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-container {
+        width: 200px;
+    }
+    .logo-container img {
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .search-container {
+        width: 90%;
+        margin-top: 10px;
+    }
+    .search-container input {
+        font-size: 14px;
+    }
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: linear-gradient( #000000, #6092bF);
+    transition: 0.3s ease-in-out;
+    padding-top: 60px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    text-align: left;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.sidebar ul li a i {
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+.sidebar ul li a:hover {
+    background: #000000;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+/* Toggle Button */
+.menu-btn {
+    position: fixed;
+    top: 18px;
+    left: 15px;
+    font-size: 25px;
+    background: none;
+    border: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+/* When sidebar is active */
+.sidebar.active {
+    left: 0;
+}
+#loginModal {
+    display: none; /* Hide the modal by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #6092be;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+/* Transparent Login Section */
+.login-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 350px;
+    padding: 40px;
+    background-image: url(12.jpeg);
+    backdrop-filter: blur(10px);
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    text-align: center;
+}
+
+/* Login Image */
+.login-container img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 15%;
+    margin-bottom: 10px;
+}
+
+/* Form Inputs */
+.login-container input {
+    width: 100%;
+    padding: 18px;
+    margin: 12px 0;
+    border: 2px solid rgba(255, 255, 255.7);
+    border-radius: 10px;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.3);
+    color: rgb(255, 255, 255);
+}
+
+/* Buttons */
+.login-container button {
+    width: 100%;
+    padding: 18px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+.login-btn {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Button Hover Effects */
+.login-btn:hover {
+    background: #6092be;
+}
+/* Password Container */
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-container input {
+    width: 100%;
+    padding: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding-right: 45px; /* Space for the eye icon */
+}
+
+/* Eye Icon */
+.password-container i {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: white;
+}
+
+.password-container i:hover {
+    color: #6092be;
+}
+
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+.nearby-rentals {
+    padding: 40px;
+    text-align: center;
+}
+
+.nearby-rentals h1 {
+    color: rgb(0, 0, 0);
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-family: cooper BAT;
+    font-size: 32px;
+}
+
+.rentals-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.rental-card {
+    width: 330px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 10px;
+    text-align: left;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.rental-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #6092bF;
+    color: white;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.rental-card h3 {
+    font-size: 16px;
+    margin: 10px 0 5px;
+}
+
+.rental-card p {
+    font-size: 14px;
+    color: gray;
+}
+
+.rating {
+    font-weight: bold;
+    font-size: 14px;
+    color: #ff9800;
+}
+
+.explore-btn {
+    margin-left: 50px;
+    margin-top: 20px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.explore-btn:hover {
+    background-color: #333;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+}
+
+.feature-card {
+    width: 330px;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.feature-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.feature-card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: #666;
+}
+.amenities h1 {
+    font-size: 32px;
+    font-family: cooper BT;    ;
+    margin-bottom: 30px;
+    color: #0c0b0b;
+    font-weight: bold;
+    margin-left: 680px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.amenities-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 30px; /* Adjust spacing */
+    max-width: 1100px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: stretch; /* Para pantay ang taas ng rows */
+}
+
+.amenity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f9f9f9;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    min-height: 180px; /* Fixed height para pantay-pantay */
+}
+
+.amenity i {
+    font-size: 30px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.amenity .text {
+    flex-grow: 1; /* Para pantay ang height */
+    max-width: 300px;
+}
+
+.amenity h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.amenity p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+}
+.explore-btn {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-left: 260px;
+}
+
+.explore-btn:hover {
+    background: linear-gradient( to right, #000000, #6092bF);
+}
+
+.options-section {
+    margin: 40px auto;
+    width: 80%;
+}
+
+.options-title {
+    font-size: 24px;
+    font-family: cooper BT;    ;
+    margin-bottom: 30px;
+    color: #0c0b0b;
+    font-weight: bold;
+    margin-left: 460px;
+    margin-top: 40px;
+    margin-bottom: 70px;
+}
+
+.options-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Spaces between boxes */
+}
+
+.option-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 180px;
+    height: 50px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.option-box:hover {
+    transform: scale(1.05);
+}
+
+.option-box i {
+    font-size: 18px;
+    color: #333;
+}
+footer {
+    background-color: #f8f8f8;
+    padding: 30px 50px;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    font-size: 20px;
+    color: black;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #6092bF;
+}
+
+.copyright {
+    font-size: 12px;
+    margin-top: 15px;
+    color: #777;
+}
+ /* Make text sizes responsive */
+html {
+    font-size: 16px;
+}
+
+@media (max-width: 1024px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 180px;
+    }
+}
+
+/* Responsive Search Bar */
+@media (max-width: 768px) {
+    .search-container {
+        width: 80%;
+    }
+}
+
+/* Make cards fully responsive */
+@media (max-width: 1024px) {
+    .rentals-container {
+        flex-wrap: wrap;
+    }
+    .rental-card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .rental-card {
+        width: 100%;
+    }
+}
+
+/* Responsive Login Form */
+@media (max-width: 480px) {
+    .login-container {
+        width: 95%;
+    }
+}
+
+/* Responsive Footer */
+@media (max-width: 480px) {
+    .footer-links {
+        flex-direction: column;
+        gap: 5px;
+    }
+}

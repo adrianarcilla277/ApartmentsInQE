@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queens Row Apartments</title>
+    <link rel="icon" href="icon.png" type="image/x-icon" sizes="192x192">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    <header>
+        <h1>Queen's East</h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search..." onkeyup="showSuggestions()">
+            <button id="searchIcon"><i class="fas fa-search"></i></button>
+            <ul id="suggestions"></ul>
+        </div>
+        
+    </header>
+    <div class="results-container" id="resultsContainer"></div>
+
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="#"><i class="fas fa-newspaper"></i> Blogs</a></li>
+            <li><a href="ABOUT.html" target="_blank"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="#" id="loginBtn"><i class="fas fa-sign-in-alt"></i> Log In</a></li> 
+            <li><a href="#"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+    </div>
+    
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="login-container">
+                <img src="c.png" alt="User Avatar">
+                <h2 style="color: rgb(255, 255, 255);">Log In</h2>
+                
+                <input type="text" placeholder="Username/Email/Phone">
+                
+                <!-- Password Field with Eye Icon -->
+                <div class="password-container">
+                    <input type="password" id="password" placeholder="Password">
+                    <i class="fas fa-eye" id="togglePassword"></i>
+                </div>
+                
+                <button class="login-btn">Log In</button>
+            </div>
+        </div>
+    </div>
+    
+
+    <section class="nearby-rentals">
+        <h1>Rental in Queens Row East</h1>
+        <div class="rentals-container">
+            <div class="rental-card" id="rental1">
+                <span class="badge">Tenants favourite</span>
+                <img src="q.jpg" alt="Condo with AC & Pool">
+                <h3>Apartment in Queens Row East</h3>
+                <p>Apartments with Parking </p>
+                <span class="rating">⭐ 4.88 (8)</span>
+            </div>
+    
+            <div class="rental-card" id="rental2">
+                <span class="badge">Tenants favourite</span>
+                <img src="w.webp" alt="Tiny Home">
+                <h3>Apartments in Queens Row East</h3>
+                <p>Apartment with 3 bedroom</p>
+                <span class="rating">⭐ 5 (52)</span>
+            </div>
+    
+            <div class="rental-card" id="rental3">
+                <span class="badge">Tenants favourite</span>
+                <img src="e.webp" alt="Benny Pinili Residence">
+                <h3>Apartment in Queens Row East</h3>
+                <p>Apartments with free WIFI</p>
+                <span class="rating">⭐ 4.91 (34)</span>
+            </div>
+    
+            <div class="rental-card" id="rental4">
+                <span class="badge">Tenants favourite</span>
+                <img src="r.avif" alt="Cozy Air-Conditioned Condo">
+                <h3>Apartment in Queens Row East</h3>
+                <p>Apartments with Aircon and WIFI</p>
+                <span class="rating">⭐ 4.8 (15)</span>
+            </div>
+        </div>
+    </section>
+    <a href="Untitled-1.html" 
+       class="explore-btn" target="_blank" rel="noopener noreferrer">
+        Explore all > 
+    </a>
+
+    <section class="features">
+        <div class="feature-card" id="feature1">
+            <img src="1.webp" alt="Fully Furnished Rentals">
+            <h3>Good Apartments</h3>
+            <p>From peaceful mountain cabins to urban apartments, these furnished rentals have all the amenities of home.</p>
+        </div>
+
+        <div class="feature-card" id="feature2">
+            <img src="2.webp" alt="Digital Nomads">
+            <h3>Digital nomads &<br> Travelling professional</h3>
+            <p>Comfortable accommodations for remote workers with high-speed WiFi and dedicated workspaces.</p>
+        </div>
+
+        <div class="feature-card" id="feature3">
+            <img src="3.jpeg" alt="Delight Included">
+            <h3>Delight included</h3>
+            <p>Sometimes the destination is the accommodation. These rentals are full of unique features.</p>
+        </div>
+
+        <div class="feature-card" id="feature4">
+            <img src="4.webp" alt="Pets Welcome">
+            <h3>Pets Welcome</h3>
+            <p>Find places that accommodate pets so you can bring your four-legged friend along.</p>
+        </div>
+        
+    </section>
+
+    <section class="amenities">
+        <h1>Amenities and perks for longer stays</h1>
+        <div class="amenities-container">
+            <div class="amenity">
+                <i class="fas fa-bed"></i>
+                <div class="text">
+                    <h3>Furnished rentals</h3>
+                    <p>Fully furnished rentals include a kitchen and the amenities you need to live comfortably for a month or longer. It’s the perfect alternative to a sublet.</p>
+                </div>
+            </div>
+            <div class="amenity">
+                <i class="fas fa-calendar-alt"></i>
+                <div class="text">
+                    <h3>Flexibility you need</h3>
+                    <p>Choose your exact move-in and move-out dates and easily book online, without any additional commitment or paperwork.*</p>
+                </div>
+            </div>
+            <div class="amenity">
+                <i class="fas fa-wallet"></i>
+                <div class="text">
+                    <h3>Simple monthly prices</h3>
+                    <p>Special rates for long-term holiday rentals and a single monthly payment without additional charges.*</p>
+                </div>
+            </div>
+            <div class="amenity">
+                <i class="fas fa-shield-alt"></i>
+                <div class="text">
+                    <h3>Book with confidence</h3>
+                    <p>Reviewed by our trusted community of guests and 24/7 support during your extended stay.</p>
+                </div>
+            </div>
+            <div class="amenity">
+                <i class="fas fa-laptop-house"></i>
+                <div class="text">
+                    <h3>Work-friendly spaces for digital nomads</h3>
+                    <p>Travelling professional? Find a long-term stay with high-speed wifi and dedicated working spaces.</p>
+                </div>
+            </div>
+            <div class="amenity">
+                <i class="fas fa-building"></i>
+                <div class="text">
+                    <h3>Looking for serviced apartments?</h3>
+                    <p>Queen's East has fully furnished apartment homes ideal for staffing, corporate housing and relocation needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="options-section">
+        <div class="options-container">
+            <div class="option-box" onclick="redirectTo('kitchen.html')">
+                <i class="fas fa-utensils"></i>
+                <span>Kitchen</span>
+            </div>
+            <div class="option-box" onclick="redirectTo('wifi.html')">
+                <i class="fas fa-wifi"></i>
+                <span>WiFi</span>
+            </div>
+            <div class="option-box" onclick="redirectTo('pet-friendly.html')">
+                <i class="fas fa-paw"></i>
+                <span>Pet-friendly</span>
+            </div>
+            <div class="option-box" onclick="redirectTo('workspace.html')">
+                <i class="fas fa-laptop"></i>
+                <span>Workspace</span>
+            </div>
+            <div class="option-box" onclick="redirectTo('parking.html')">
+                <i class="fas fa-parking"></i>
+                <span>Parking</span>
+            </div>
+            <div class="option-box" onclick="redirectTo('gym.html')">
+                <i class="fas fa-dumbbell"></i>
+                <span>Gym</span>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer>
+        <div class="footer-links">
+            <a href="#" target="_blank">© 2025 Q'E, Rental.</a>
+            <a href="#" target="_blank" >Privacy</a>
+            <a href="ABOUT.html" target="_blank" >About US</a>
+            <a href="https://www.facebook.com/profile.php?id=61572969560696" target="_blank">Contact Us!</a>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="tel:+123456789"><i class="fas fa-phone"></i></a>
+        </div>
+
+        <p class="copyright">This Website was develop by Students SHS in San Nicolas III.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
